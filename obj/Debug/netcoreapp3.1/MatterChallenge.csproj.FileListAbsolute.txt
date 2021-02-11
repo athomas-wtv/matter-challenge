@@ -1,0 +1,11 @@
+/Users/andrethomas/Sites/matter-challenge/bin/Debug/netcoreapp3.1/MatterChallenge
+/Users/andrethomas/Sites/matter-challenge/bin/Debug/netcoreapp3.1/MatterChallenge.deps.json
+/Users/andrethomas/Sites/matter-challenge/bin/Debug/netcoreapp3.1/MatterChallenge.runtimeconfig.json
+/Users/andrethomas/Sites/matter-challenge/bin/Debug/netcoreapp3.1/MatterChallenge.runtimeconfig.dev.json
+/Users/andrethomas/Sites/matter-challenge/bin/Debug/netcoreapp3.1/MatterChallenge.dll
+/Users/andrethomas/Sites/matter-challenge/bin/Debug/netcoreapp3.1/MatterChallenge.pdb
+/Users/andrethomas/Sites/matter-challenge/obj/Debug/netcoreapp3.1/MatterChallenge.csprojAssemblyReference.cache
+/Users/andrethomas/Sites/matter-challenge/obj/Debug/netcoreapp3.1/MatterChallenge.AssemblyInfoInputs.cache
+/Users/andrethomas/Sites/matter-challenge/obj/Debug/netcoreapp3.1/MatterChallenge.AssemblyInfo.cs
+/Users/andrethomas/Sites/matter-challenge/obj/Debug/netcoreapp3.1/MatterChallenge.dll
+/Users/andrethomas/Sites/matter-challenge/obj/Debug/netcoreapp3.1/MatterChallenge.pdb
