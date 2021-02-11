@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Sites
+namespace MatterChallenge
 {
     class Program
     {
@@ -24,14 +24,13 @@ namespace Sites
 
             // Converting each record to be a transaction object and adding it to a list of transactions.
             Console.WriteLine("Converting each record to be a transaction object and adding it to a list of transactions.");
-            int propertyPlacement = 0;
-            var transaction = new Transaction();
             var transactions = new List<Transaction>();
             string[] rawTransactions = System.IO.File.ReadAllLines("transactions.txt");
             string[] rtArr;
             foreach(var rt in rawTransactions.Skip(1))
             {
                 rtArr = rt.Split(",");
+                var transaction = new Transaction();
                 for (int i = 0; i < rtArr.Length; i++)
                 {
                     // propertyPlacement = i - numOfProperties;
@@ -48,7 +47,7 @@ namespace Sites
                     }
                     else if(currentPropety.PropertyType.Name == "DateTime")
                     {
-                        currentPropety.SetValue(transaction, DateTime.Parse(rtArr[i]));
+                        currentPropety.SetValue(transaction, DateTime.Parse(rtArr[i]).Date);
                     }
 
                 }
@@ -62,6 +61,7 @@ namespace Sites
             foreach(var t in transactions)
             {
                 master.Add(index,t);
+                index++;
             }
             
 
@@ -82,11 +82,12 @@ namespace Sites
                         master.Remove(tr.Key);
                     }
                 }
+                firstOccurance = true;
             }
             
-            Console.WriteLine("Largest Number");
+            Console.WriteLine("Largest Transaction:");
             DisplayLargestTransaction(master);
-            Console.WriteLine("Smallest Number:");
+            Console.WriteLine("Smallest Transaction:");
             DisplaySmallestTransaction(master);
             Console.ReadLine();
             
@@ -99,9 +100,10 @@ namespace Sites
             var smallestAmount = master[hasSmallest].Amount;
             for(var i = 1; i <= master.Count; i++)
             {
-                currentAmount = master[hasSmallest].Amount;
+                currentAmount = master[i].Amount;
                 if(currentAmount < smallestAmount)
                 {
+                    smallestAmount = currentAmount;
                     hasSmallest = i;
                 }
             }
@@ -115,9 +117,10 @@ namespace Sites
             var largestAmount = master[hasLargest].Amount;
             for(var i = 1; i <= master.Count; i++)
             {
-                currentAmount = master[hasLargest].Amount;
+                currentAmount = master[i].Amount;
                 if(currentAmount > largestAmount)
                 {
+                    largestAmount = currentAmount;
                     hasLargest = i;
                 }
             }
