@@ -9,13 +9,11 @@ namespace MatterChallenge
         static void Main(string[] args)
         {
             // Use reflection to get the number of properties for the class.
-            Console.WriteLine("Use reflection to get the number of properties for the class");
             Type type = typeof(Transaction);
             var numOfProperties = type.GetProperties().Length;
             var properties = type.GetProperties();
             
             // Add property names to a list of strings
-            Console.WriteLine("Add property names to a list of strings");
             var propertyNames = new List<string>();
             foreach(var prop in properties)
             {
@@ -23,7 +21,6 @@ namespace MatterChallenge
             }
 
             // Converting each record to be a transaction object and adding it to a list of transactions.
-            Console.WriteLine("Converting each record to be a transaction object and adding it to a list of transactions.");
             var transactions = new List<Transaction>();
             string[] rawTransactions = System.IO.File.ReadAllLines("transactions.txt");
             string[] rtArr;
@@ -55,7 +52,6 @@ namespace MatterChallenge
             }
 
             // Adding transactions to a dictionary
-            Console.WriteLine("Adding transactions to a dictionary");
             var master = new Dictionary<int, Transaction>();
             var index = 1;
             foreach(var t in transactions)
@@ -66,7 +62,6 @@ namespace MatterChallenge
             
 
             // Find duplicates and remove them
-            Console.WriteLine("Find duplicates and remove them");
             bool firstOccurance = true;
             foreach(var t in transactions)
             {
@@ -129,7 +124,7 @@ namespace MatterChallenge
 
         private static void Display(Transaction transaction)
         {
-            Console.WriteLine("Date: {0}, Description: {1}, Amount: {2}, Account Name: {3}", transaction.Date, transaction.Description, transaction.Amount, transaction.AccountName);
+            Console.WriteLine("\tDate: {0}, Description: {1}, Amount: {2}, Account Name: {3}", transaction.Date, transaction.Description, transaction.Amount, transaction.AccountName);
         }
     }
 }
