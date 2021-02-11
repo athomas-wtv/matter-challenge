@@ -51,7 +51,6 @@ namespace Sites
                     {
                         master.Remove(tr.Key);
                     }
-
                 }
             }
 
